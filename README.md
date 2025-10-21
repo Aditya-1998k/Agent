@@ -81,9 +81,9 @@ soa_agent/
 2. Activate the virtual environment: `source .venv/bin/activate`
 3. Install the the dependency: `pip install -r requirements.txt`
 4. Start the worker: `python main.py`
-
-<img width="623" height="132" alt="image" src="https://github.com/user-attachments/assets/17fd61db-6d6e-4b58-b9fc-324879326c3a" />
-
-5. I have integrated the soa_agent with my Task-tracker API.
-6. In Task Tracker API, with new user registration, a message will get published to welcome queue
-7. Which get consumed by worker of soa agent, which will sent welcome letter to user via Mail.
+   
+   <img width="623" height="132" alt="image" src="https://github.com/user-attachments/assets/17fd61db-6d6e-4b58-b9fc-324879326c3a" />
+   
+6. I have integrated the soa_agent with my Task-tracker API.
+7. In Task Tracker API, with new user registration, a message will get published to welcome queue
+8. Which get consumed by worker of soa agent, which will sent welcome letter to user via Mail.
