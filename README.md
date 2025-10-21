@@ -36,8 +36,7 @@ This agent powers background tasks like sending welcome emails, notifications, a
     │     SOA Agent      │
     │ (Worker Consumers) │
     ├────────────────────┤
-    │  welcome_queue → send_welcome_email()  │
-    │  notify_queue  → send_notification()   │
+    │  welcome_queue     | -----------> Send Welcome Letter to user
     └────────────────────┘
 ```
 
@@ -45,35 +44,46 @@ This agent powers background tasks like sending welcome emails, notifications, a
 ---
 
 ## ⚙️ Configuration
-
 All queue configurations are defined in `config.ini`:
 
 ```ini
 [DEFAULT]
-RABBITMQ_HOST = rabbitmq
-RABBITMQ_PORT = 5672
+[RABBITMQ]
+host = localhost
+port = 5672
+username = soa_agent
+password = mypassword
+virtual_host = /
 
-[welcome_queue]
-worker_count = 2
-handler = welcome_worker.send_welcome_email
-
-[notify_queue]
-worker_count = 1
-handler = notify_worker.send_notification
+[WORKERS]
+welcome = 2
 ```
-Each section represents a queue, with:
-- worker_count → Number of worker threads to run
-- handler → Python function to handle messages (module.function inside workers/)
 
 ## Folder Structure
 ```
-soa-agent/
-├── main.py                # Entry point (reads config and starts workers)
-├── config.ini             # Queue configuration
-├── workers/               # Handlers for each queue
+soa_agent/
+├── config.ini
+├── main.py
+├── worker_manager.py
+├── base_worker.py
+├── utils.py
+|
+├── workers/
 │   ├── __init__.py
 │   └── welcome_worker.py
-└── utilities/             # Common utilities
-    ├── __init__.py
-    └── rabbit_utils.py
+|
+|___ .gitignore
+└── requirements.txt
 ```
+
+## Setup & Usages:
+1. Create a virtual environment : `python -m venv .venv`
+2. Activate the virtual environment: `source .venv/bin/activate`
+3. Install the the dependency: `pip install -r requirements.txt`
+4. Start the worker: `python main.py`
+
+<img width="623" height="132" alt="image" src="https://github.com/user-attachments/assets/17fd61db-6d6e-4b58-b9fc-324879326c3a" />
+
+5. I have integrated the soa_agent with my Task-tracker API.
+6. In Task Tracker API, with new user registration, a message will get published to welcome queue
+7. Which get consumed by worker of soa agent, which will sent welcome letter to user via Mail.
