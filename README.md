@@ -21,15 +21,15 @@ This agent powers background tasks like sending welcome emails, notifications, a
 ## 🏗️ Architecture
 ```scss
       ┌─────────────────────┐
-      │ Task Tracker Backend │
-      │   (Publisher)        │
-      └────────┬─────────────┘
+      │ Task Tracker Backend| 
+      │   (Publisher)       |
+      └────────┬────────────┘
                │
                ▼
      ┌──────────────────┐
-     │   RabbitMQ        │
-     │  (Message Broker) │
-     └────────┬──────────┘
+     │   RabbitMQ       │
+     │  (Message Broker)│
+     └────────┬─────────┘
                │
                ▼
     ┌────────────────────┐
@@ -44,7 +44,7 @@ This agent powers background tasks like sending welcome emails, notifications, a
 ---
 
 ## ⚙️ Configuration
-All queue configurations are defined in `config.ini`:
+All queue configurations are defined in **config.ini**:
 
 ```ini
 [DEFAULT]
