@@ -85,13 +85,18 @@ soa_agent/
 ```
 
 ## Setup & Usages:
-1. Create a virtual environment : `python -m venv .venv`      
-2. Activate the virtual environment: `source .venv/bin/activate`      
-3. Install the the dependency: `pip install -r requirements.txt`      
-4. Start the worker: `python main.py`      
+1. Create a virtual environment :       
+`python -m venv .venv`      
+2. Activate the virtual environment:       
+`source .venv/bin/activate`      
+3. Install the the dependency:       
+`pip install -r requirements.txt`      
+4. Start the worker:       
+`python main.py`      
    
    <img width="623" height="132" alt="image" src="https://github.com/user-attachments/assets/17fd61db-6d6e-4b58-b9fc-324879326c3a" />
    
-6. I have integrated the soa_agent with my Task-tracker API.
-7. In Task Tracker API, with new user registration, a message will get published to welcome queue
-8. Which get consumed by worker of soa agent, which will sent welcome letter to user via Mail.
+## Current Integration
+1. Integrated with **Task Tracker** app for sending welcome letter to user on registration.
+2. Going to integrate with **Better Life Index** app for send detailed report to the user post ML model prediction.
+
