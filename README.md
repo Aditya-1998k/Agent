@@ -57,6 +57,10 @@ virtual_host = /
 
 [WORKERS]
 welcome = 2
+
+[EMAIL]
+from_email = example@gmail.com
+password = 16wordpasswordapp
 ```
 
 ## Folder Structure
@@ -72,15 +76,19 @@ soa_agent/
 │   ├── __init__.py
 │   └── welcome_worker.py
 |
+|---processors/
+|   |--__init__.py
+|   └── send_mail.py
+|
 |___ .gitignore
 └── requirements.txt
 ```
 
 ## Setup & Usages:
-1. Create a virtual environment : `python -m venv .venv`
-2. Activate the virtual environment: `source .venv/bin/activate`
-3. Install the the dependency: `pip install -r requirements.txt`
-4. Start the worker: `python main.py`
+1. Create a virtual environment : `python -m venv .venv`      
+2. Activate the virtual environment: `source .venv/bin/activate`      
+3. Install the the dependency: `pip install -r requirements.txt`      
+4. Start the worker: `python main.py`      
    
    <img width="623" height="132" alt="image" src="https://github.com/user-attachments/assets/17fd61db-6d6e-4b58-b9fc-324879326c3a" />
    
