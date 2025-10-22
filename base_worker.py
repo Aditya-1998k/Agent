@@ -17,6 +17,10 @@ class BaseWorker:
         channel.start_consuming()
 
     def on_message(self, ch, method, properties, body):
-        """Override in subclass"""
+        """
+        Override in subclass with MRO feature.
+        But it act as template if any worker class
+        does not have on_message method.
+        """
         print(f"[{self.queue_name}] Received: {body}")
 
