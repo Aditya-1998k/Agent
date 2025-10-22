@@ -100,5 +100,7 @@ soa_agent/
    
 ## Current Integration
 1. Integrated with **Task Tracker** app for sending welcome letter to user on registration.
-2. Going to integrate with **Better Life Index** app for send detailed report to the user post ML model prediction.
+            <img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/6413db1e-e253-4109-8c84-fceaf8dbb666" />
 
+2. Going to integrate with **Better Life Index** app for send detailed report to the user post ML model prediction.
+           <img width="400" height="250" alt="image" src="https://github.com/user-attachments/assets/b6d96c2f-68e0-4a8c-a57a-d013e1b8950a" />
