@@ -84,7 +84,7 @@ soa_agent/
 └── requirements.txt
 ```
 
-## Setup & Usages:
+## Setup & Usages
 1. Create a virtual environment :       
 `python -m venv .venv`      
 2. Activate the virtual environment:       
@@ -94,7 +94,8 @@ soa_agent/
 4. Start the worker:       
 `python main.py`      
    
-   <img width="623" height="132" alt="image" src="https://github.com/user-attachments/assets/17fd61db-6d6e-4b58-b9fc-324879326c3a" />
+   <img width="704" height="177" alt="image" src="https://github.com/user-attachments/assets/ea221bd5-851e-4265-a405-a6ae3951c794" />
+5. Make sure you have Rabbitmq service running or you can do basic setup.
    
 ## Current Integration
 1. Integrated with **Task Tracker** app for sending welcome letter to user on registration.
