@@ -1,5 +1,5 @@
-from utils import load_config
-from worker_manager import WorkerManager
+from utilities.utils import load_config
+from soa.worker_manager import WorkerManager
 
 def main():
     config = load_config()

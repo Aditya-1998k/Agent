@@ -1,23 +1,17 @@
 import smtplib
 from email.mime.text import MIMEText
-from utils import load_config
+from utilities.utils import load_config
 
 
-def send_email(to_email):
+def send_email(to_email, message):
     """Send a welcome letter to user."""
     config = load_config()
     from_email = config['EMAIL']['from_email']
     password = config['EMAIL']['password']
 
     subject = "Welcome to Task Tracker!"
-    content = (
-        f"Hello,\n\n"
-        f"Welcome to Task Tracker! We're happy to have you on board.\n\n"
-        f"Please reach out to us for any query.\n\n"
-        f"— Task Tracker Team."
-    )
 
-    msg = MIMEText(content, "plain")
+    msg = MIMEText(message, "plain")
     msg["Subject"] = subject
     msg["From"] = from_email
     msg["To"] = to_email

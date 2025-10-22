@@ -1,4 +1,4 @@
-from utils import get_rabbitmq_connection
+from utilities.utils import get_rabbitmq_connection
 
 class BaseWorker:
     def __init__(self, queue_name, config):
