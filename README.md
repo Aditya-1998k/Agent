@@ -98,6 +98,10 @@ soa_agent/
    
    <img width="704" height="177" alt="image" src="https://github.com/user-attachments/assets/ea221bd5-851e-4265-a405-a6ae3951c794" />
 5. Make sure you have Rabbitmq service running or you can do basic setup.
+6. Check consumer status
+   <img width="1092" height="487" alt="image" src="https://github.com/user-attachments/assets/7cc114db-529d-4f15-a109-97ddb3059122" />
+
+
    
 ## Current Integration
 1. Integrated with **Task Tracker** app for sending welcome letter to user on registration.
