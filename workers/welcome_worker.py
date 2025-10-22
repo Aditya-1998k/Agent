@@ -6,6 +6,7 @@ class WelcomeWorker(BaseWorker):
     def on_message(self, ch, method, properties, body):
         email = body.decode().strip()
         print(f"[WelcomeWorker] New message: {email}")
+        subject = "Welcome to Task Tracker!"
         message = (
             """
             Dear Customer,
@@ -19,5 +20,5 @@ class WelcomeWorker(BaseWorker):
             """
         )
         message = textwrap.dedent(message)
-        send_email(email, message)
+        send_email(email, subject, message)
 
