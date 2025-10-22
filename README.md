@@ -57,7 +57,8 @@ password = mypassword
 virtual_host = /
 
 [WORKERS]
-welcome = 2
+welcome = 1
+ml_queue = 1
 
 [EMAIL]
 from_email = example@gmail.com
