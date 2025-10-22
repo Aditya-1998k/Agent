@@ -2,8 +2,7 @@
 
 **SOA Agent** is a lightweight, configuration-driven service built to handle background processing using **RabbitMQ**.  
 It acts as a **Service-Oriented Architecture (SOA) agent**, dynamically spawning workers for different queues defined in `config.ini`.
-
-This agent powers background tasks like sending welcome emails, notifications, and other asynchronous events for your systems — such as the **Task Tracker Backend**.
+This agent powers background tasks like sending welcome emails, notifications, and other asynchronous events for your systems.
 
 ---
 
@@ -11,7 +10,7 @@ This agent powers background tasks like sending welcome emails, notifications, a
 
 ✅ Dynamic worker creation based on `config.ini`  
 ✅ Supports multiple queues and handlers  
-✅ Threaded worker model for concurrency  
+✅ Each worker is a seperate process. 
 ✅ JSON-based message consumption  
 ✅ Clean modular structure (easy to extend)  
 ✅ Works seamlessly with RabbitMQ
@@ -20,24 +19,26 @@ This agent powers background tasks like sending welcome emails, notifications, a
 
 ## 🏗️ Architecture
 ```scss
-      ┌─────────────────────┐
-      │ Task Tracker Backend| 
-      │   (Publisher)       |
-      └────────┬────────────┘
-               │
-               ▼
-     ┌──────────────────┐
-     │   RabbitMQ       │
-     │  (Message Broker)│
-     └────────┬─────────┘
-               │
-               ▼
-    ┌────────────────────┐
-    │     SOA Agent      │
-    │ (Worker Consumers) │
-    ├────────────────────┤
-    │  welcome_queue     | -----------> Send Welcome Letter to user
-    └────────────────────┘
+┌─────────────────────┐
+│ Task Tracker Backend| 
+│   (Publisher)       |
+└────────┬────────────┘
+         │
+         ▼
+┌──────────────────┐
+│   RabbitMQ       │
+│  (Message Broker)│
+└────────┬─────────┘
+         │
+         ▼
+┌────────────────────┐
+│     SOA Agent      │
+│ (Worker Consumers) │
+├────────────────────┤
+│  welcome_queue     | -----------> Send Welcome Letter to user
+├────────────────────┤
+│  ml_queue          | -----------> send detailed report to the user
+└────────────────────┘
 ```
 
 
