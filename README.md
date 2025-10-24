@@ -1,7 +1,7 @@
-# 🧩 SOA Agent
+# 🧩 Agent
 
 **SOA Agent** is a lightweight, configuration-driven service built to handle background processing using **RabbitMQ**.  
-It acts as a **Service-Oriented Architecture (SOA) agent**, dynamically spawning workers for different queues defined in `config.ini`.
+It acts as a **Service-Oriented Architecture** agent, dynamically spawning workers for different queues defined in `config.ini`.
 This agent powers background tasks like sending welcome emails, notifications, and other asynchronous events for your systems.
 
 ---
@@ -32,7 +32,7 @@ This agent powers background tasks like sending welcome emails, notifications, a
          │
          ▼
 ┌────────────────────┐
-│     SOA Agent      │
+│     Agent      │
 │ (Worker Consumers) │
 ├────────────────────┤
 │  welcome_queue     | -----------> Send Welcome Letter to user
