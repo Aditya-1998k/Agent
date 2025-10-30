@@ -1,10 +1,14 @@
 import multiprocessing
 from workers.welcome_worker import WelcomeWorker
 from workers.ml_worker import MLWorker
+from workers.alert_user_worker import AlertUserWorker
+from workers.user_password_worker import UserPasswordWorker
 
 WORKER_MAP = {
     "welcome": WelcomeWorker,
-    "ml_queue": MLWorker
+    "ml_queue": MLWorker,
+    "alert_user": AlertUserWorker,
+    "user_password": UserPasswordWorker
 }
 
 class WorkerManager:
